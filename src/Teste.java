@@ -4,23 +4,26 @@ import com.lima.tibere.robo.comando.Andar;
 import com.lima.tibere.robo.comando.Virar;
 import com.lima.tibere.robo.direcao.Direita;
 import com.lima.tibere.robo.direcao.Esquerda;
+import com.lima.tibere.robo.direcao.Orientacao;
 
 public class Teste {
 
     public static void main(String[] args) {
 
-        Robo r2d2 = new Robo().setNome("R2D2");
-        r2d2.execute(Andar.getInstance())
-                .execute(Virar.getInstance(Direita.virar()))
-                .execute(Andar.getInstance())
-                .execute(Virar.getInstance(Esquerda.virar()))
-                .execute(Andar.getInstance());
+        Robo r2d2 = new Robo("R2D2").setOrientacao(Orientacao.NORTE);
+        r2d2.execute(new Andar())
+                .execute(new Virar(new Direita()))
+                .execute(new Andar())
+                .execute(new Virar(new Esquerda()))
+                .execute(new Andar());
 
-        Robo daileon = new Robo().setNome("Daileon");
-        daileon.execute(Andar.getInstance())
-                .execute(Virar.getInstance(Direita.virar()))
-                .execute(Andar.getInstance())
-                .execute(Virar.getInstance(Esquerda.virar()))
-                .execute(Andar.getInstance());
+        System.out.println("-------------- Rodar --------------");
+        Robo daileon = new Robo("Daileon").setOrientacao(Orientacao.NORTE);
+        daileon.execute(new Virar(new Direita()))
+                .execute(new Virar(new Direita()))
+                .execute(new Virar(new Direita()))
+                .execute(new Virar(new Direita()))
+                .execute(new Virar(new Direita()));
+
     }
 }

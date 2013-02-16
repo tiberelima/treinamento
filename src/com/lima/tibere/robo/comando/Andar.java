@@ -1,21 +1,12 @@
 package com.lima.tibere.robo.comando;
 
+import com.lima.tibere.robo.direcao.Orientacao;
+
 public class Andar implements Comando {
 
-    private static Comando instance;
-
-    private Andar() {
-    }
-
-    public static Comando getInstance() {
-        if (instance == null) {
-            instance = new Andar();
-        }
-        return instance;
-    }
-
     @Override
-    public void play() {
+    public Orientacao play(Orientacao orientacao) {
         System.out.println("Andar");
+        return orientacao;
     }
 }
