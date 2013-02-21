@@ -1,31 +1,9 @@
 package com.lima.tibere.mapper;
 
-import java.util.ArrayList;
-import java.util.List;
-
-class StringToInteger implements Mapper<Object, Object> {
-
-    private static StringToInteger instance;
-
-    private StringToInteger() {
-    }
-
-    public static StringToInteger getInstance() {
-        if (instance == null) {
-            instance = new StringToInteger();
-        }
-        return instance;
-    }
+class StringToInteger implements Mapper<String, Integer> {
 
     @Override
-    public Object map(Object from) throws NumberFormatException {
-
-        List<Integer> out = new ArrayList<>();
-
-        for (String in : (List<String>) from) {
-            out.add(Integer.valueOf(in));
-        }
-
-        return out;
+    public Integer mapElement(String from) throws NumberFormatException {
+        return Integer.valueOf(from);
     }
 }
