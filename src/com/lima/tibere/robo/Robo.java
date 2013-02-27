@@ -8,19 +8,15 @@ public class Robo {
     private String nome;
     private Orientacao orientacao;
 
-    public Robo(String nome) {
+    public Robo(String nome, Orientacao orientacao) {
         this.nome = nome;
+        this.orientacao = orientacao;
     }
 
     public Robo execute(Comando comando) {
         System.out.println("Orientação atual: " + getOrientacao());
         System.out.print(nome + " executando comando: ");
-        this.setOrientacao(comando.play(getOrientacao()));
-        return this;
-    }
-
-    public Robo setNome(String nome) {
-        this.nome = nome;
+        orientacao = comando.play(orientacao);
         return this;
     }
 
@@ -30,10 +26,5 @@ public class Robo {
 
     public Orientacao getOrientacao() {
         return orientacao;
-    }
-
-    public Robo setOrientacao(Orientacao orientacao) {
-        this.orientacao = orientacao;
-        return this;
     }
 }

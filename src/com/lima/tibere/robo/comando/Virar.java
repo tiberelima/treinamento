@@ -14,6 +14,6 @@ public class Virar implements Comando {
     @Override
     public Orientacao play(Orientacao orientacao) {
         System.out.println("Virar " + direcao.getValue());
-        return Orientacao.getOrientacao(orientacao, direcao);
+        return direcao.atualizarOrientacao(orientacao);
     }
 }
