@@ -14,10 +14,7 @@ public class Robo {
     }
 
     public Robo execute(Comando comando) {
-        System.out.println("Orientação atual: " + getOrientacao());
-        System.out.print(nome + " executando comando: ");
-        orientacao = comando.play(orientacao);
-        return this;
+        return new Robo(nome, comando.play(orientacao));
     }
 
     public String getNome() {

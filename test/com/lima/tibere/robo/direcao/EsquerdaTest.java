@@ -3,16 +3,16 @@ package com.lima.tibere.robo.direcao;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-public class DireitaTest {
+public class EsquerdaTest {
 
     @Test
     public void testAtualizarOrientacao() {
         System.out.println("atualizarOrientacao");
-        Direita instance = new Direita();
+        Direcao instance = new Esquerda();
 
         Orientacao orientacao = Orientacao.NORTE;
 
-        Orientacao expResult = Orientacao.LESTE;
+        Orientacao expResult = Orientacao.OESTE;
         Orientacao result = instance.atualizarOrientacao(orientacao);
         assertEquals(expResult, result);
 
@@ -23,7 +23,7 @@ public class DireitaTest {
 
         orientacao = result;
         result = instance.atualizarOrientacao(orientacao);
-        expResult = Orientacao.OESTE;
+        expResult = Orientacao.LESTE;
         assertEquals(expResult, result);
 
         orientacao = result;
@@ -33,7 +33,7 @@ public class DireitaTest {
 
         orientacao = result;
         result = instance.atualizarOrientacao(orientacao);
-        expResult = Orientacao.LESTE;
+        expResult = Orientacao.OESTE;
         assertEquals(expResult, result);
 
         orientacao = result;
@@ -43,7 +43,7 @@ public class DireitaTest {
 
         orientacao = result;
         result = instance.atualizarOrientacao(orientacao);
-        expResult = Orientacao.OESTE;
+        expResult = Orientacao.LESTE;
         assertEquals(expResult, result);
 
         orientacao = result;

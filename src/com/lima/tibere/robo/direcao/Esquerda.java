@@ -9,6 +9,12 @@ public class Esquerda implements Direcao {
 
     @Override
     public Orientacao atualizarOrientacao(Orientacao orientacao) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        int i = orientacao.getValor();
+        if (i > 3) {
+            i -= 3;
+        } else {
+            i = 12;
+        }
+        return Orientacao.getOrientacaoPeloValor(i);
     }
 }

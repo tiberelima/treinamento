@@ -9,13 +9,12 @@ public class Direita implements Direcao {
 
     @Override
     public Orientacao atualizarOrientacao(Orientacao orientacao) {
-        int i = orientacao.getI();
+        int i = orientacao.getValor();
         if (i < 12) {
             i += 3;
         } else {
             i = 3;
         }
-        System.out.println("orientação: " + i);
-        return Orientacao.SUL;
+        return Orientacao.getOrientacaoPeloValor(i);
     }
 }

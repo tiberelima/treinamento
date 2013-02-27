@@ -6,7 +6,6 @@ public class Andar implements Comando {
 
     @Override
     public Orientacao play(Orientacao orientacao) {
-        System.out.println("Andar");
         return orientacao;
     }
 }

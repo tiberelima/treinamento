@@ -13,7 +13,6 @@ public class Virar implements Comando {
 
     @Override
     public Orientacao play(Orientacao orientacao) {
-        System.out.println("Virar " + direcao.getValue());
         return direcao.atualizarOrientacao(orientacao);
     }
 }

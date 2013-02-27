@@ -7,9 +7,9 @@ public class OrientacaoTest {
 
     @Test
     public void test() {
-        assertEquals(3, Orientacao.LESTE.getI());
-        assertEquals(12, Orientacao.NORTE.getI());
-        assertEquals(9, Orientacao.OESTE.getI());
-        assertEquals(6, Orientacao.SUL.getI());
+        assertEquals(3, Orientacao.LESTE.getValor());
+        assertEquals(12, Orientacao.NORTE.getValor());
+        assertEquals(9, Orientacao.OESTE.getValor());
+        assertEquals(6, Orientacao.SUL.getValor());
     }
 }
