@@ -11,7 +11,6 @@ public class AndarTest {
 
     @Test
     public void testPlay() {
-        System.out.println("play");
         Orientacao orientacao = Orientacao.LESTE;
         Andar instance = new Andar();
         Orientacao expResult = Orientacao.LESTE;

@@ -7,7 +7,6 @@ public class DireitaTest {
 
     @Test
     public void testAtualizarOrientacao() {
-        System.out.println("atualizarOrientacao");
         Direita instance = new Direita();
 
         Orientacao orientacao = Orientacao.NORTE;

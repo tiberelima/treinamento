@@ -2,33 +2,22 @@ package com.lima.tibere.robo.direcao;
 
 public enum Orientacao {
 
-    NORTE(12),
-    LESTE(3),
-    SUL(6),
-    OESTE(9);
-    private int valor;
+    NORTE("OESTE", "LESTE"),
+    LESTE("NORTE", "SUL"),
+    SUL("LESTE", "OESTE"),
+    OESTE("SUL", "NORTE");
+    private String esquerda;
+    private String direita;
 
-    Orientacao(int valor) {
-        this.valor = valor;
+    Orientacao(String esquerda, String direita) {
+        this.esquerda = esquerda;
+        this.direita = direita;
     }
 
-    public int getValor() {
-        return valor;
-    }
-
-    public static Orientacao getOrientacaoPeloValor(int valor) {
-        if (valor == 3) {
-            return LESTE;
+    public static Orientacao novaOrientacao(Orientacao orientacao, Direcao direcao) {
+        if (direcao instanceof Direita) {
+            return Orientacao.valueOf(orientacao.direita);
         }
-        if (valor == 6) {
-            return SUL;
-        }
-        if (valor == 9) {
-            return OESTE;
-        }
-        if (valor == 12) {
-            return NORTE;
-        }
-        return null;
+        return Orientacao.valueOf(orientacao.esquerda);
     }
 }

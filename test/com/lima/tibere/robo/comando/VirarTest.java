@@ -13,7 +13,6 @@ public class VirarTest {
 
     @Test
     public void testPlayVirarParaDireita() {
-        System.out.println("play");
         Orientacao orientacao = Orientacao.NORTE;
         Virar instance = new Virar(new Direita());
         Orientacao expResult = Orientacao.LESTE;
@@ -23,7 +22,6 @@ public class VirarTest {
 
     @Test
     public void testPlayVirarParaEsquerda() {
-        System.out.println("play");
         Orientacao orientacao = Orientacao.NORTE;
         Virar instance = new Virar(new Esquerda());
         Orientacao expResult = Orientacao.OESTE;
