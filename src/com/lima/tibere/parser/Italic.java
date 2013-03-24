@@ -1,11 +1,15 @@
 package com.lima.tibere.parser;
 
-import sun.misc.Regexp;
+public class Italic extends AbstractSimpleTagParser {
 
-public class Italic extends AbstractParser {
+    public Italic() {
+        tag = "i";
+        regexp = "[/][/]";
+        pattern = "//";
+    }
 
     @Override
     public String parse(String string) {
-        return super.parser(string, "//", "i", new Regexp("[/][/]"));
+        return super.parser(string);
     }
 }

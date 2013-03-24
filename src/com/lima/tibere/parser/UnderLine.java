@@ -1,11 +1,15 @@
 package com.lima.tibere.parser;
 
-import sun.misc.Regexp;
+public class UnderLine extends AbstractSimpleTagParser {
 
-public class UnderLine extends AbstractParser {
+    public UnderLine() {
+        tag = "u";
+        regexp = "[_][_]";
+        pattern = "__";
+    }
 
     @Override
     public String parse(String string) {
-        return super.parser(string, "__", "u", new Regexp("[_][_]"));
+        return super.parser(string);
     }
 }
